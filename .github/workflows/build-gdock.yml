@@ -3,7 +3,7 @@
 #   Author: JK
 #=================================================
 
-name: Build 竞斗云+passwall-20200212-2
+name: Build 竞斗云+passwall-20200213
 
 on: 
   release:
@@ -64,7 +64,7 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        cp -f gdockfull128.config ./lede/.config
+        cp -f gdockfull128-20200207.config ./lede/.config
         chmod +x diy.sh
         cd lede
         ../diy.sh
@@ -94,5 +94,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: G-DOCK+passwall20200212-2
+        name: G-DOCK+passwall20200213
         path: ./lede/bin
